@@ -10,21 +10,10 @@ export default {
     createStore(reducers, initialState) {
         console.log('CREATE STORE', initialState);
         return createStore(
-            combineReducers(this.createReducers(reducers)),
+            combineReducers(reducers),
             initialState,
             composeWithDevTools(applyMiddleware(thunk))
         );
-    },
-
-    createReducer(name, methods) {
-        return (state = {}, action) => (methods[action.type] ? methods[action.type](state, action) : state);
-    },
-
-    createReducers(methodsMap) {
-        return Object.keys(methodsMap).reduce((result, reducerName) => {
-            result[reducerName] = this.createReducer(reducerName, methodsMap[reducerName]);
-            return result;
-        }, {});
     },
 
     bindActionsCreators(actions, dispatch) {

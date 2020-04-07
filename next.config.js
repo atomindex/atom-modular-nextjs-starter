@@ -1,9 +1,13 @@
 const path = require('path');
+const withCss = require('@zeit/next-css');
 const withSass = require('@zeit/next-sass');
 
-module.exports = withSass({
+let config = withSass(withCss({
     cssModules: true,
     cssLoaderOptions: {
+        camelCase: true
+    },
+    sassLoaderOptions: {
         camelCase: true
     },
     webpack: (config) => {
@@ -12,4 +16,6 @@ module.exports = withSass({
         config.resolve.alias['@lib'] = path.resolve(__dirname, '@lib/');
         return config;
     }
-});
+}));
+
+module.exports = config;

@@ -1,1 +1,1 @@
-export { default} from '~/pages/paginator/Paginator';
+export { default } from '~/pages/paginator/Paginator';

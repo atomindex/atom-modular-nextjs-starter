@@ -1,5 +1,5 @@
-import headerGetInitialState from '~/modules/header/redux/state';
-import footerGetInitialState from '~/modules/footer/redux/state';
+import headerGetInitialState from '~/features/header/redux/state';
+import footerGetInitialState from '~/features/footer/redux/state';
 
 export default async () => {
     let header = await headerGetInitialState();

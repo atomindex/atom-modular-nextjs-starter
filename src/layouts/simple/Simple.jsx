@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '~/modules/header/Header';
-import Footer from '~/modules/footer/Footer';
+import Header from '~/features/header/Header';
+import Footer from '~/features/footer/Footer';
 
 class Simple extends React.Component {
     render() {

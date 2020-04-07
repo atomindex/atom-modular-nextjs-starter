@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+
 import reduxPage from '@lib/redux/page';
-import reducers from './redux/reducers';
-import actions from './redux/actions';
+import slices from './redux/slices';
 import getInitialState from './redux/state';
 
 import SimpleLayout from '~/layouts/simple/Simple';
-
 
 
 
@@ -34,7 +33,6 @@ class Page extends React.Component {
 }
 
 export default reduxPage({
-    reducers,
-    actions,
+    slices,
     getInitialState
 })(Page);

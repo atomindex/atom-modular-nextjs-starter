@@ -3,11 +3,12 @@ import React from 'react';
 class Footer extends React.Component {
     render() {
         let { state, actions } = this.props;
-        let { messagesCount } = state;
+        let { messagesCount } = state || {};
+        console.log({ state, actions });
         return (
             <div>
-                <button onClick={actions.messages.incCount}>Увеличить</button>
-                <button onClick={actions.messages.decCount}>Уменьшить</button>
+                <button onClick={actions.messagesIncCount}>Увеличить</button>
+                <button onClick={actions.messagesDecCount}>Уменьшить</button>
                 <div>[ПОДВАЛ]: Количество: { messagesCount }</div>
             </div>
         );
